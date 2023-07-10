@@ -48,7 +48,7 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: calc(100vh - 600px);
+  height: calc(100vh - 600px);
 }
 
 h1 {
