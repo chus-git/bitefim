@@ -17,7 +17,7 @@
 
   --primary: #18df93;
 
-  --header-and-footer-heigth: 300px;
+  --header-and-footer-heigth: 25vh;
 
 }
 
@@ -179,12 +179,4 @@ a:hover {
 
 .hider.hide {
   opacity: 0;
-}
-
-@media (max-width: 576px) {
-
-  :root {
-    --header-and-footer-heigth: 150px;
-  }
-
 }
