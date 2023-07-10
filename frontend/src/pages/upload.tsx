@@ -42,8 +42,13 @@ export default function Upload() {
             const rootUrl = window.location.origin; // Cambiar por la URL real de tu aplicación
             const downloadUrl = `${rootUrl}/download/${public_id}`;
             setDownloadLink(downloadUrl);
-        }).catch(() => {
-            setErrorMessage("An error ocurred uploading your file");
+        }).catch((error) => {
+            if (error.response && error.response.data && error.response.data.message) {
+                const errorMessage = error.response.data.message;
+                setErrorMessage(errorMessage);
+            } else {
+                setErrorMessage("An error occurred uploading your file");
+            }
         }).finally(() => {
             setUploading(false);
             setUploadProgress(0);
