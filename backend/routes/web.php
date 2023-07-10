@@ -16,7 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-
-Route::get('/{fileName}', function () {
-    return view('file');
-});

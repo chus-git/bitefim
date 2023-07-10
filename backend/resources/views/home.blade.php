@@ -9,12 +9,7 @@
 </head>
 
 <body style="background-color: black; color: white;">
-    <h1>Hola como estamos</h1>
-    <form action="/api/uploadFile" method="POST" enctype="multipart/form-data">
-        @csrf
-        <input type="file" name="file">
-        <button type="submit">Upload File</button>
-    </form>
+    <h1>Hi!</h1>
 </body>
 
 </html>
