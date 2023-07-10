@@ -180,3 +180,11 @@ a:hover {
 .hider.hide {
   opacity: 0;
 }
+
+@media (max-width: 576px) {
+
+  .drag-and-drop-area {
+    min-height: 200px;
+  }
+
+}
