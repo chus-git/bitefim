@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import axios, { AxiosError, AxiosResponse } from "axios";
+import axios, { AxiosResponse } from "axios";
 
 export default function Upload() {
     const [uploading, setUploading] = useState(false);
@@ -42,7 +42,7 @@ export default function Upload() {
             const rootUrl = window.location.origin; // Cambiar por la URL real de tu aplicación
             const downloadUrl = `${rootUrl}/download/${public_id}`;
             setDownloadLink(downloadUrl);
-        }).catch((error: AxiosError) => {
+        }).catch(() => {
             setErrorMessage("An error ocurred uploading your file");
         }).finally(() => {
             setUploading(false);
