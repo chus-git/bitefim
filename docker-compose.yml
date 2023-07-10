@@ -1,0 +1,38 @@
+version: "3"
+services:
+  laravel:
+    container_name: laravel
+    build:
+      context: ./backend
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./backend:/var/www/html
+    environment:
+      - "APP_ENV=local"
+      - "APP_DEBUG=true"
+      - "APP_KEY=base64:OCNa/PJs+ugDBMUl+oXTY0EyxuKMosoO0WXFeEyfPw4="
+      - "DB_CONNECTION=mysql"
+      - "DB_HOST=db"
+      - "DB_PORT=3306"
+      - "DB_DATABASE=bitefim"
+      - "DB_USERNAME=bitefim"
+      - "DB_PASSWORD=bitefim"
+    depends_on:
+      - db
+    command:
+      [
+        "sh",
+        "-c",
+        "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=9000"
+      ]
+  db:
+    container_name: db
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      - "MYSQL_DATABASE=bitefim"
+      - "MYSQL_USER=bitefim"
+      - "MYSQL_PASSWORD=bitefim"
+      - "MYSQL_ROOT_PASSWORD=bitefim"
