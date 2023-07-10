@@ -27,7 +27,7 @@ export default function Upload() {
         const formData = new FormData();
         formData.append("file", selectedFile);
 
-        axios.post("http://localhost:9000/api/uploadFile", formData, {
+        axios.post(`${import.meta.env.VITE_API_URL}/uploadFile`, formData, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },

@@ -21,7 +21,7 @@ export default function Download() {
     useEffect(() => {
         // Fetch file info
         axios
-            .get(`http://localhost:9000/api/requestFileInfo/${fileID}`)
+            .get(`${import.meta.env.VITE_API_URL}/requestFileInfo/${fileID}`)
             .then((response) => {
                 setFileInfo(response.data);
                 setRemainingSeconds(response.data.remaining_seconds);
@@ -58,7 +58,7 @@ export default function Download() {
 
         // Request file download
         axios
-            .get(`http://localhost:9000/api/requestFile/${fileID}`, {
+            .get(`${import.meta.env.VITE_API_URL}/requestFile/${fileID}`, {
                 responseType: "blob",
             })
             .then((response) => {
