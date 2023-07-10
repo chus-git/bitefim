@@ -17,6 +17,8 @@
 
   --primary: #18df93;
 
+  --header-and-footer-heigth: 300px;
+
 }
 
 * {
@@ -31,16 +33,8 @@ body {
 
 header,
 footer {
-  height: 200px;
+  height: var(--header-and-footer-heigth);
   text-align: center;
-}
-
-header {
-  height: 300px;
-}
-
-footer {
-  height: 300px;
 }
 
 main {
@@ -48,7 +42,7 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: calc(100vh - 600px);
+  min-height: calc(100vh - calc(var(--header-and-footer-heigth) * 2));
 }
 
 h1 {
@@ -185,4 +179,12 @@ a:hover {
 
 .hider.hide {
   opacity: 0;
+}
+
+@media (max-width: 576px) {
+
+  :root {
+    --header-and-footer-heigth: 150px;
+  }
+
 }
