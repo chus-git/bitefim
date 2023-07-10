@@ -163,7 +163,7 @@ export default function Upload() {
                         </div>
                     </div>
                 ) : errorMessage ? (
-                    <div style={{ textAlign: 'center' }}>
+                    <div className="center" style={{ textAlign: 'center' }}>
                         <h2 style={{ margin: 0 }}>Error uploading file</h2>
                         <p style={{ marginTop: '10px', marginBottom: '25px' }}>{errorMessage}</p>
                         <button className="warning" onClick={handleReset}>
