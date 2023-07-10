@@ -123,16 +123,20 @@ export default function Upload() {
                     <div
                         style={{
                             display: "flex",
+                            gap: "15px",
                             justifyContent: "center",
                             alignItems: "center",
-                            gap: "10px",
+                            textAlign: "center",
+                            flexWrap: "wrap",
                         }}
                     >
-                        <span>
+                        <span style={{ order: 1 }}>
                             <strong>Drag and drop here</strong>
                         </span>
-                        <span>or</span>
-                        <button onClick={handleButtonClick}>Select file</button>
+                        <span style={{ order: 2 }}>or</span>
+                        <button style={{ order: 3 }} onClick={handleButtonClick}>
+                            Select file
+                        </button>
                         <input
                             ref={fileInputRef}
                             type="file"
