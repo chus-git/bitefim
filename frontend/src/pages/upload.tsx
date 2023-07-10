@@ -145,7 +145,7 @@ export default function Upload() {
                         />
                     </div>
                 ) : selectedFile && !uploading && !downloadLink && !errorMessage ? (
-                    <div className="center" style={{ gap: "15px", width: '100%' }}>
+                    <div className="center" style={{ gap: "15px", width: '100%', textAlign: 'center' }}>
                         <span>
                             <strong>File selected:</strong> {selectedFile.name} (
                             {formatFileSize(selectedFile.size)})
@@ -153,7 +153,7 @@ export default function Upload() {
                         <button onClick={handleUpload}>Upload</button>
                     </div>
                 ) : uploading ? (
-                    <div className="center" style={{ width: '100%' }}>
+                    <div className="center" style={{ width: '100%', textAlign: 'center' }}>
                         <h3 style={{ marginBottom: '15px' }}>Uploading file...</h3>
                         <div className="upload-progress">
                             <div
@@ -163,22 +163,22 @@ export default function Upload() {
                         </div>
                     </div>
                 ) : errorMessage ? (
-                    <>
+                    <div style={{ textAlign: 'center' }}>
                         <h2 style={{ margin: 0 }}>Error uploading file</h2>
                         <p style={{ marginTop: '10px', marginBottom: '25px' }}>{errorMessage}</p>
                         <button className="warning" onClick={handleReset}>
                             Try again
                         </button>
-                    </>
+                    </div>
                 ) : downloadLink ? (
-                    <>
+                    <div className="center" style={{ textAlign: 'center' }}>
                         <h2 style={{ margin: 0 }}>File uploaded successfully</h2>
                         <p style={{ marginTop: '10px', marginBottom: '25px' }}>Copy the download link below and share it!</p>
                         <button onClick={handleCopyLink} disabled={copiedLink}>
                             {copiedLink ? "Copied!" : "Copy link"}
                         </button>
                         <span style={{ cursor: 'pointer', textDecoration: 'underline', marginTop: '10px' }} onClick={handleReset}>Upload other file</span>
-                    </>
+                    </div>
                 ) : null}
             </div>
         </>
