@@ -21,8 +21,11 @@ class CleanExpiredFiles extends Command
         // Busca los archivos expirados en la base de datos
         $expiredFiles = File::where('deletion_date', '<=', $currentDateTime)->get();
 
-        // Marca los archivos expirados como "deleted"
+        // Marca los archivos expirados como "deleted" y eliminarlos
         foreach ($expiredFiles as $file) {
+
+            Storage::delete($file->path);
+
             $file->status = 'deleted';
             $file->save();
         }

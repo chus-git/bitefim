@@ -29,7 +29,6 @@ class FileController extends Controller
 
         // Step 4: Store the file in the public "files" directory with a unique name
         $filePath = $request->file('file')->store('files');
-        $fileName = basename($filePath);
 
         // Step 5: Get the total size of uploaded files in the last 24 hours
         $totalSize = File::where('ip', $request->ip())
