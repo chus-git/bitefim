@@ -19,7 +19,7 @@ class FileController extends Controller
 
         // Step 2: Check if the user has uploaded more than 3 files in the last 10 minutes
         if ($this->hasExceededFileLimit($request->ip(), 3, 10)) {
-            return response()->json(['message' => 'File upload limit exceeded'], 422);
+            return response()->json(['message' => 'The file upload limit has been exceeded. You are only allowed to upload a maximum of 3 files within a 10-minute timeframe.'], 422);
         }
 
         // Step 3: Validate file size
