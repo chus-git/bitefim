@@ -16,7 +16,7 @@
 
   --primary: #18df93;
 
-  --header-and-footer-heigth: 25vh;
+  --header-and-footer-heigth: 25dvh;
 
 }
 
@@ -32,6 +32,12 @@ body {
   color: white;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
 header,
 footer {
   height: var(--header-and-footer-heigth);
@@ -42,8 +48,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 100%;
-  min-height: 50vh;
+  flex: 1;
 }
 
 h1 {
@@ -144,7 +151,7 @@ a:hover {
 
   width: 100%;
   max-width: 700px;
-  min-height: 400px;
+  flex: 1;
 
   border: dashed 6px var(--primary);
   border-radius: 30px;
@@ -180,12 +187,4 @@ a:hover {
 
 .hider.hide {
   opacity: 0;
-}
-
-@media (max-width: 576px) {
-
-  .drag-and-drop-area {
-    min-height: 200px;
-  }
-
 }
